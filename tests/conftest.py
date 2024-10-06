@@ -15,13 +15,13 @@ def browser():
     if browser_name == 'firefox':
         service = FirefoxService(executable_path=GeckoDriverManager().install())
         options = webdriver.FirefoxOptions()
-        # options.add_argument("--headless")
+        options.add_argument("--headless")
         driver = webdriver.Firefox(service=service, options=options)
         driver.maximize_window()
     else:
         service = Service()
         options = webdriver.ChromeOptions()
-        # options.add_argument("--headless")
+        options.add_argument("--headless")
         driver = webdriver.Chrome(service=service, options=options)
         driver.maximize_window()
     yield driver
