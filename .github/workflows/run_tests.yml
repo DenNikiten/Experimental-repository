@@ -1,7 +1,17 @@
 name: Automated tests e2e_ui
 
 on:
-  push
+  workflow_dispatch:
+    inputs:
+      deployment_target:
+        description: Choose target
+        required: true
+        default: all
+        type: choice
+        options:
+          - first_test
+          - second_test
+          - all
 
 jobs:
   test:
@@ -18,5 +28,9 @@ jobs:
         run: sudo apt-get install google-chrome-stable
       - name: install dependencies
         run: pip install -r requirements.txt
-      - name: Run tests
+      - name: first_test
+        uses: pytest
+      - name: second_test
+        uses: pytest
+      - name: all
         uses: pytest

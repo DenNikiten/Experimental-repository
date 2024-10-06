@@ -56,5 +56,5 @@ class BasePage:
     def get_screenshot(self):
         now_date = datetime.datetime.now().strftime("%Y.%m.%d-%H.%M.%S")
         name_screenshot = f"screenshot_{now_date}.png"
-        path = '.\\screen\\'
+        path = r'./screen/'
         self.driver.save_screenshot(path + name_screenshot)

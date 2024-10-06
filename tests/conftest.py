@@ -5,7 +5,7 @@ from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.chrome.service import Service
 
-with open(r".\yaml_files\datatest.yaml", encoding="utf-8") as f:
+with open(r"./yaml_files/datatest.yaml", encoding="utf-8") as f:
     data = yaml.safe_load(f)
     browser_name = data['browser_name']
 
